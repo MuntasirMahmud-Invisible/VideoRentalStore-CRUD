@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -20,30 +21,21 @@ namespace VideoRentalApps.Controllers
             _context.Dispose();
         }
         // GET: Movies
-        public ActionResult Index()
+        public ViewResult Index()
         {
-            var movies = _context.Movies;
+            var movies = _context.Movies.Include(c => c.Genre).ToList();
 
             return View(movies);
         }
 
         public ActionResult Details(int id)
         {
-            var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
+            var movie = _context.Movies.Include(c => c.Genre).SingleOrDefault(c => c.Id == id);
             if (movie == null)
                 return HttpNotFound();
             return View(movie);
         }
 
-        //private IEnumerable<Movie> GetMovies()
-        //{
-        //    return new List<Movie>
-        //    {
-        //        new Movie { Id = 1, Name = "Avenger!" },
-        //        new Movie { Id = 2, Name = "Inception" }
-
-        //    };
-        //}
-
+       
     }
 }
