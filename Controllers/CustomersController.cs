@@ -18,7 +18,7 @@ namespace VideoRentalApps.Controllers
             _context = new ApplicationDbContext();
         }
 
-        protected override void Dispose(bool disposing)
+        protected override void Dispose(bool disposing) 
         {
             _context.Dispose();
         }
@@ -30,7 +30,7 @@ namespace VideoRentalApps.Controllers
             var viewmodel = new CustomerFormViewModel
             {
                 MembershipTypes = membershipTypes
-        };
+            };
             return View("CustomerForm", viewmodel);
         }
 

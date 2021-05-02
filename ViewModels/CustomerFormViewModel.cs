@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using VideoRentalApps.Models;
 
 namespace VideoRentalApps.ViewModels
@@ -10,6 +7,19 @@ namespace VideoRentalApps.ViewModels
     {
         public IEnumerable<MemberShipType> MembershipTypes { get; set; }
         public Customer Customer { get; set; }
+        public string Title
+        {
+            get
+            {
+                if (Customer != null && Customer.Id != 0)
+                    return "Edit Customer";
 
+                else
+                    return "New Customer";
+
+            }
+        }
     }
+
+   
 }
