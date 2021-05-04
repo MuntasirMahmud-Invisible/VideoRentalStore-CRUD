@@ -29,14 +29,26 @@ namespace VideoRentalApps.Controllers
 
             var viewmodel = new CustomerFormViewModel
             {
-                MembershipTypes = membershipTypes
+                Customer = new Customer(),
+                MembershipTypes = membershipTypes,
             };
             return View("CustomerForm", viewmodel);
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer)
         {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new CustomerFormViewModel
+                {
+                    Customer = customer,
+                    MembershipTypes = _context.MemberShipTypes.ToList()
+                };
+
+                return View("CustomerForm", viewModel);
+            }
             if (customer.Id == 0)
             {
                 _context.Customers.Add(customer);
@@ -69,7 +81,7 @@ namespace VideoRentalApps.Controllers
 
             return View(customer);
         }
-        
+     
         public ActionResult Edit(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
