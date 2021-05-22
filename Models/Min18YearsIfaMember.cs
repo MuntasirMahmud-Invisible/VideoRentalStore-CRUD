@@ -12,8 +12,8 @@ namespace VideoRentalApps.Models
         {
             var Customer = (Customer)validationContext.ObjectInstance;
 
-            if (Customer.MembershipTypeId == MemberShipType.Unknown ||
-                Customer.MembershipTypeId == MemberShipType.PayAsYouGo)
+            if (Customer.MembershipTypeId == MembershipType.Unknown ||
+                Customer.MembershipTypeId == MembershipType.PayAsYouGo)
             {
                 return ValidationResult.Success;
             }

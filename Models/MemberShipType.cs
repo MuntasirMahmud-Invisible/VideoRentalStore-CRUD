@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace VideoRentalApps.Models
 {
-    public class MemberShipType
+    public class MembershipType
     {
         public byte Id { get; set; }
         [Required]

@@ -5,7 +5,7 @@ namespace VideoRentalApps.ViewModels
 {
     public class CustomerFormViewModel
     {
-        public IEnumerable<MemberShipType> MembershipTypes { get; set; }
+        public IEnumerable<MembershipType> MembershipTypes { get; set; }
         public Customer Customer { get; set; }
         public string Title
         {
