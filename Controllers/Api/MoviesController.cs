@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Data.Entity;
 using System.Web.Http;
 using VideoRentalApps.Dtos;
 using VideoRentalApps.Models;
@@ -22,7 +23,10 @@ namespace VideoRentalApps.Controllers.Api
         //GET: Api/Movies
         public IEnumerable<MovieDto> GetMovies()
         {
-            var movie = _context.Movies.ToList().Select(Mapper.Map<Movie, MovieDto>);
+            var movie = _context.Movies
+                .Include(m => m.Genre)
+                .ToList()
+                .Select(Mapper.Map<Movie, MovieDto>);
 
             return movie;
         }

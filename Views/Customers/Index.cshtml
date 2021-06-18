@@ -52,6 +52,7 @@
                             return "<button class='btn-link js-delete' data-customer-id=" + data + ">Delete</button>";
                         }
                     }
+
                 ]
             });
 
@@ -63,7 +64,8 @@
                         $.ajax({
                             url: "/api/customers/" + button.attr("data-customer-id"),
                             method: "DELETE",
-                            success: function () {
+                            success: function ()
+                            {
                                 table.row(button.parents("tr")).remove().draw();
                             }
                         });
