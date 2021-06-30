@@ -305,6 +305,10 @@
     <Compile Include="Migrations\202106301303018_SeedUsers.Designer.cs">
       <DependentUpon>202106301303018_SeedUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106301934348_AddNIDToApplicationUser.cs" />
+    <Compile Include="Migrations\202106301934348_AddNIDToApplicationUser.Designer.cs">
+      <DependentUpon>202106301934348_AddNIDToApplicationUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -630,6 +634,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106301303018_SeedUsers.resx">
       <DependentUpon>202106301303018_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106301934348_AddNIDToApplicationUser.resx">
+      <DependentUpon>202106301934348_AddNIDToApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
