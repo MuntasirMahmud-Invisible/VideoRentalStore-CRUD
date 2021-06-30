@@ -24,6 +24,7 @@ namespace VideoRentalApps.Controllers
         }
 
         //Add: New Movie
+        [Authorize(Roles =RoleName.CanManageMovies)]
         public ActionResult New()
         {
             var Genres = _context.Genres.ToList();
@@ -72,7 +73,10 @@ namespace VideoRentalApps.Controllers
         // GET: Movies
         public ViewResult Index()
         {
-            return View();
+            if (User.IsInRole(RoleName.CanManageMovies))          
+                return View("List");         
+
+           return View("ReadOnLyList");
         }
 
         public ActionResult Details(int id)
