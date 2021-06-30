@@ -8,6 +8,10 @@ namespace VideoRentalApps.Models
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
+
+        [Required]
+        [Display(Name = "National ID")]
+        public string NID { get; set; }
     }
 
     public class ExternalLoginListViewModel
