@@ -1,10 +1,7 @@
 ﻿using AutoMapper;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Data.Entity;
-using System.Net;
-using System.Net.Http;
+using System.Linq;
 using System.Web.Http;
 using VideoRentalApps.Dtos;
 using VideoRentalApps.Models;
@@ -40,12 +37,12 @@ namespace VideoRentalApps.Controllers.Api
         public IHttpActionResult GetCustomer(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
-            
+
             if (customer == null)
             {
                 return NotFound();
             }
-                
+
             return Ok(Mapper.Map<Customer, CustomerDto>(customer));
         }
 
