@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace VideoRentalApps.Models
+﻿namespace VideoRentalApps.Models
 {
     public class RoleName
     {
+        //public const string CanManageMovies = "CanManagerMovies";
         public const string CanManageMovies = "CanManageMovies";
-        
+
     }
 }

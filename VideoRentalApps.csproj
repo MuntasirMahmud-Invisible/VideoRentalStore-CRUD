@@ -324,6 +324,14 @@
     <Compile Include="Migrations\202107011349392_AddNumberAvailableToMovie.Designer.cs">
       <DependentUpon>202107011349392_AddNumberAvailableToMovie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107072205201_addCanManageMoviesToRoleName.cs" />
+    <Compile Include="Migrations\202107072205201_addCanManageMoviesToRoleName.designer.cs">
+      <DependentUpon>202107072205201_addCanManageMoviesToRoleName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107072219268_SeedUsers1.cs" />
+    <Compile Include="Migrations\202107072219268_SeedUsers1.designer.cs">
+      <DependentUpon>202107072219268_SeedUsers1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -767,6 +775,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107011349392_AddNumberAvailableToMovie.resx">
       <DependentUpon>202107011349392_AddNumberAvailableToMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107072205201_addCanManageMoviesToRoleName.resx">
+      <DependentUpon>202107072205201_addCanManageMoviesToRoleName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107072219268_SeedUsers1.resx">
+      <DependentUpon>202107072219268_SeedUsers1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
