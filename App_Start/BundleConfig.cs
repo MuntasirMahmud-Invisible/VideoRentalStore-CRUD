@@ -15,7 +15,8 @@ namespace VideoRentalApps
                         "~/scripts/datatables/jquery.datatables.js",
                         "~/scripts/datatables/datatables.bootstrap.js",
                         "~/scripts/typeahead.bundle.js",
-                        "~/scripts/toastr.js"
+                        "~/scripts/toastr.js",
+                        "~/Content/js/scripts.js"
                       ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -27,11 +28,19 @@ namespace VideoRentalApps
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap-Lumen.css",
                       "~/content/datatables/css/datatables.bootstrap.css",
                       "~/Content/typeahead.css",
                       "~/Content/toastr.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/css/styles.css"
+                      ));
+
+
+
+
+
+
+
         }
     }
 }
