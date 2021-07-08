@@ -12,6 +12,10 @@ namespace VideoRentalApps.Models
         [Required]
         [Display(Name = "National ID")]
         public string NID { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string Phone { get; set; }
     }
 
     public class ExternalLoginListViewModel
@@ -76,6 +80,10 @@ namespace VideoRentalApps.Models
         [Required]
         [Display(Name = "National Id")]
         public string NID { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string Phone { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
