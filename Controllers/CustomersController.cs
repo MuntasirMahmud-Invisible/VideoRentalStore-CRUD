@@ -1,8 +1,5 @@
-﻿using System;
-using System.Data.Entity;
-using System.Collections.Generic;
+﻿using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using VideoRentalApps.Models;
 using VideoRentalApps.ViewModels;
@@ -18,11 +15,13 @@ namespace VideoRentalApps.Controllers
             _context = new ApplicationDbContext();
         }
 
-        protected override void Dispose(bool disposing) 
+        protected override void Dispose(bool disposing)
         {
             _context.Dispose();
         }
 
+        //Add: New Customer
+        [Authorize(Roles = RoleName.CanManageCustomers)]
         public ActionResult New()
         {
             var membershipTypes = _context.MemberShipTypes.ToList();
@@ -35,6 +34,7 @@ namespace VideoRentalApps.Controllers
             return View("CustomerForm", viewmodel);
         }
 
+        //Save
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer)
@@ -68,19 +68,22 @@ namespace VideoRentalApps.Controllers
 
         // GET: Customers
         public ViewResult Index()
-        {         
-            return View();
+        {
+            if (User.IsInRole(RoleName.CanManageCustomers))
+                return View("List");
+
+            return View("ReadOnLyList");
         }
 
         public ActionResult Details(int id)
         {
-            var customer = _context.Customers.Include(c=> c.MembershipType).SingleOrDefault(c => c.Id == id);
+            var customer = _context.Customers.Include(c => c.MembershipType).SingleOrDefault(c => c.Id == id);
             if (customer == null)
                 return HttpNotFound();
 
             return View(customer);
         }
-     
+
         public ActionResult Edit(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
@@ -99,6 +102,6 @@ namespace VideoRentalApps.Controllers
             return View("CustomerForm", viewModel);
 
         }
-        
+
     }
 }
