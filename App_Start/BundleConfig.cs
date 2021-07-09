@@ -10,13 +10,16 @@ namespace VideoRentalApps
             bundles.Add(new Bundle("~/bundles/lib").Include(
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/bootstrap.js",
+                         "~/Scripts/bootstrap.min.js",
                         "~/scripts/bootbox.js",
                         "~/Scripts/respond.js",
                         "~/scripts/datatables/jquery.datatables.js",
                         "~/scripts/datatables/datatables.bootstrap.js",
                         "~/scripts/typeahead.bundle.js",
                         "~/scripts/toastr.js",
-                        "~/Content/js/scripts.js"
+                        "~/Content/js/scripts.js",
+                        "~/Content/js/bootstrap.min.js",
+                        "~/s bootstrap.min.js"
                       ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
