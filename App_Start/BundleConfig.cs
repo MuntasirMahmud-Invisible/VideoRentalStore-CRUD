@@ -7,19 +7,15 @@ namespace VideoRentalApps
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new Bundle("~/bundles/lib").Include(
+            bundles.Add(new ScriptBundle("~/bundles/lib").Include(
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/bootstrap.js",
-                         "~/Scripts/bootstrap.min.js",
                         "~/scripts/bootbox.js",
                         "~/Scripts/respond.js",
                         "~/scripts/datatables/jquery.datatables.js",
                         "~/scripts/datatables/datatables.bootstrap.js",
                         "~/scripts/typeahead.bundle.js",
-                        "~/scripts/toastr.js",
-                        "~/Content/js/scripts.js",
-                        "~/Content/js/bootstrap.min.js",
-                        "~/s bootstrap.min.js"
+                        "~/scripts/toastr.js"
                       ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -31,18 +27,12 @@ namespace VideoRentalApps
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
+                      "~/Content/bootstrap-lumen.css",
+                      "~/Content/bootstrap-theme.css",
                       "~/content/datatables/css/datatables.bootstrap.css",
-                      "~/Content/typeahead.css",
-                      "~/Content/toastr.css",
-                      "~/Content/site.css",
-                      "~/Content/css/styles.css"
-                      ));
-
-
-
-
-
-
+                      "~/content/typeahead.css",
+                      "~/content/toastr.css",
+                      "~/Content/site.css"));
 
         }
     }

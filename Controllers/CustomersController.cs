@@ -102,6 +102,14 @@ namespace VideoRentalApps.Controllers
             return View("CustomerForm", viewModel);
 
         }
+        /*
+                public ActionResult Datatable()
+                {
+                    if (User.IsInRole(RoleName.CanManageCustomers))
+                        return View("Datatable");
+
+                    return View("ReadOnLyList");
+                }*/
 
     }
 }

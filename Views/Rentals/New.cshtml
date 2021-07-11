@@ -1,6 +1,8 @@
 ﻿@model dynamic
 
-@{ ViewBag.Title = "New Rental Form"; }
+@{
+    ViewBag.Title = "New Rental Form";
+}
 
 <h2>New Rental Form</h2>
 
@@ -15,7 +17,7 @@
     <div class="form-group">
         <label>Movie</label>
         <div class="tt-container">
-            <input id="movie" name="movie" data-rule-atLeastOneMovie ="true" data-rule-outofStock ="true" type="text" value="" class="form-control" />
+            <input id="movie" name="movie" data-rule-atLeastOneMovie="true" type="text" value="" class="form-control" />
         </div>
     </div>
 
@@ -35,7 +37,6 @@
             var vm = {
                 movieIds: []
             };
-
             var customers = new Bloodhound({
                 datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
                 queryTokenizer: Bloodhound.tokenizers.whitespace,
@@ -54,8 +55,6 @@
             }).on("typeahead:select", function (e, customer) {
                 vm.customerId = customer.id;
             });
-
-
             var movies = new Bloodhound({
                 datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
                 queryTokenizer: Bloodhound.tokenizers.whitespace,
@@ -76,20 +75,12 @@
                 $("#movie").typeahead("val", "");
                 vm.movieIds.push(movie.id);
             });
-
-
-            @*Client side validation by *@
             $.validator.addMethod("validCustomer", function () {
                 return vm.customerId && vm.customerId !== 0;
             }, "Please select a valid customer.");
-            @*$.validator.addMethod("outofStock", function () {
-                return vm.movieIds.length = 0;
-            }, "This Movie is out of stock.");*@
             $.validator.addMethod("atLeastOneMovie", function () {
                 return vm.movieIds.length > 0;
             }, "Please select at least one movie.");
-
-
             var validator = $("#newRental").validate({
                 submitHandler: function () {
                     $.ajax({
@@ -98,7 +89,7 @@
                         data: vm
                     })
                         .done(function () {
-                            toastr.success("Rentals record successfully stored.");
+                            toastr.success("Rentals successfully recorded.");
                             $("#customer").typeahead("val", "");
                             $("#movie").typeahead("val", "");
                             $("#movies").empty();
