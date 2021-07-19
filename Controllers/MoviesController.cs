@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Web;
-using VideoRentalApps.Migrations;
 using System.Web.Mvc;
 using VideoRentalApps.Models;
 using VideoRentalApps.ViewModels;
-using System.Data.Entity.Validation;
 
 namespace VideoRentalApps.Controllers
 {
@@ -24,7 +20,7 @@ namespace VideoRentalApps.Controllers
         }
 
         //Add: New Movie
-        [Authorize(Roles =RoleName.CanManageMovies)]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult New()
         {
             var Genres = _context.Genres.ToList();
@@ -54,6 +50,7 @@ namespace VideoRentalApps.Controllers
             if (movie.Id == 0)
             {
                 movie.DateAdded = DateTime.Now;
+                movie.NumberAvailable = movie.NumberInStock;
                 _context.Movies.Add(movie);
             }
             else
@@ -64,6 +61,7 @@ namespace VideoRentalApps.Controllers
                 movieInDb.GenreId = movie.GenreId;
                 movieInDb.NumberInStock = movie.NumberInStock;
 
+
             }
 
             _context.SaveChanges();
@@ -73,10 +71,10 @@ namespace VideoRentalApps.Controllers
         // GET: Movies
         public ViewResult Index()
         {
-            if (User.IsInRole(RoleName.CanManageMovies))          
-                return View("List");         
+            if (User.IsInRole(RoleName.CanManageMovies))
+                return View("List");
 
-           return View("ReadOnLyList");
+            return View("ReadOnLyList");
         }
 
         public ActionResult Details(int id)
@@ -89,7 +87,7 @@ namespace VideoRentalApps.Controllers
             return View(movie);
 
         }
-       
+
         //Edit Movie
         public ActionResult Edit(int id)
         {
@@ -101,7 +99,7 @@ namespace VideoRentalApps.Controllers
             }
 
             var viewModel = new MovieFormViewModel(movie)
-            {               
+            {
                 Genres = _context.Genres.ToList()
             };
             return View("MovieForm", viewModel);

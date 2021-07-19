@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="~/Content/Arsha/img/favicon.ico" />
+    <title>@ViewBag.Title - Video Rental Store</title>
+    @Styles.Render("~/Content/tcss")
+    @Scripts.Render("~/bundles/modernizr")
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+</head>
+
+<body>
+
+    @Html.Partial("_NavBarTheme")
+    <main id="main">
+        <section id="breadcrumbs" class="breadcrumbs bg-transparent">
+            <div class="row">
+                <div class="col-lg-12 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+                    <div class="">
+                        @RenderBody()
+                    </div>
+                </div>
+             </div>
+        </section>
+    </main>
+   
+   <hr />
+   <!-- ======= Footer ======= -->
+   <footer id="footer" style="color:black;">
+
+       <div class="footer-top">
+                            <div class="container">
+                                <div class="row">
+
+                                    <div class="col-lg-3 col-md-6 footer-contact">
+                                        <h2>Muntasir Mahmud</h2>
+                                        <p>
+                                            #House 37, #Road 17,#Sector 11 <br>
+                                            Uttara, Dhaka<br>
+                                            Bangladesh <br><br>
+                                            <strong>Phone:</strong> +880 1925 09 2559<br>
+                                            <strong>Email:</strong> muntasirdmahmud@hotmail.com<br>
+                                        </p>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-6 footer-links">
+                                        <h4></h4>
+                                        <ul>
+                                            @*<li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                                                <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                                                <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+                                                <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+                                                <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>*@
+                                        </ul>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-6 footer-links">
+                                        <h4></h4>
+                                        <ul>
+                                            @*<li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+                                                <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+                                                <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+                                                <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+                                                <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>*@
+                                        </ul>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-6 footer-links">
+                                        <h4>Social Networks</h4>
+                                        <p>You Can find me in those link</p>
+                                        <div class="social-links mt-3">
+                                            <a href="https://github.com/MuntasirMahmud-Invisible" target="_blank"  class="github">
+                                            <i class="bx bxl-github"></i>
+                                            </a>
+                                            <a href="https://www.facebook.com/muntasirdmahmud/" target="_blank" class="facebook">
+                                            <i class="bx bxl-facebook"></i>
+                                            </a>
+                                            <a href="https://www.instagram.com/muntasirdmahmud/" target="_blank" class="instagram">
+                                            <i class="bx bxl-instagram"></i>
+                                            </a>
+                                            <a href="" class="google-plus">
+                                            <i class="bx bxl-skype"></i>
+                                            </a>
+                                            <a href="https://www.linkedin.com/in/muntasir-mahmud-31249b85/" target="_blank" class="linkedin">
+                                            <i class="bx bxl-linkedin"></i>
+                                            </a>
+                                            @*<a href="https://twitter.com/Dhrubainvisible" target="_blank" class="twitter">
+                                            <i class="bx bxl-upwork"></i>*@
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+       <div class="container footer-bottom clearfix">
+                            <div class="copyright">
+                                &copy; Copyright @DateTime.Now.Year<strong><span>Muntasir Mahmud</span></strong>. All Rights Reserved
+                            </div>
+                            <div class="credits">
+                                <!-- All the links in the footer should remain intact. -->
+                                <!-- You can delete the links only if you purchased the pro version. -->
+                                <!-- Licensing information:-->
+                                Designed by <a href="">Muntasir</a>
+                            </div>
+                        </div>
+   </footer><!-- End Footer -->
+   <div id="preloader"></div>
+   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+   @Scripts.Render("~/bundles/tlib")
+   @RenderSection("scripts", required: false)
+</body>
+</html>

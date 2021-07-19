@@ -1,26 +1,51 @@
 ﻿@model IEnumerable<VideoRentalApps.Models.Movie>
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Movies";
+    Layout = "~/Views/Shared/_LayoutTheme.cshtml";
 }
 
-<h2>Movies</h2>
-<p>
-    @Html.ActionLink("New Movie", "New", "Movies", null, new { @class = "btn btn-primary" })
-</p>
 
-<table id="movies" class="table table-bordered table-hover">
-    <thead>
-        <tr>
-            <th>Movie</th>
-            <th>Genre</th>
-            <th>Delete</th>
-        </tr>
-    </thead>
+<html lang="en">
+<body>
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs bg-transparent">
+            @*<div class="bg-color-bluecyan container">*@
+            <div class="row">
+                <div class="col-lg-12 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
 
-    <tbody>
-    </tbody>
-</table>
+
+                    <div class="container">
+                        <div>
+                            <ol class="justify-content-sm-end">
+                                <li><a href="@Url.Action("Index","Home")">Home</a></li>
+                                <li>Movies</li>
+                            </ol>
+                        </div>
+                        <p style="padding-top: 20px">
+                            @Html.ActionLink("New Movie", "New", "Movies", null, new { @class = "btn btn-info" })
+                        </p>
+
+                        <table id="movies" class="table table-success table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Movie</th>
+                                    <th>Genre</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+</body>
+</html>
 @section scripts{
     <script>
         $(document).ready(function () {
@@ -36,19 +61,15 @@
                             return "<a href='/movies/edit" + movie.id + "'>" + movie.name + "</a>";
                         }
                     },
-
                     {
                         data: "genre.name"
                     },
-
                     {
                         data: "id",
                         render: function (data) {
-                            return "<button class = 'btn-link js-delete' data-movie-id =" + data + ">Delete</button>";
-
+                            return "<button class = 'btn btn-danger js-delete' data-movie-id =" + data + ">Delete</button>";
                         }
                     }
-
                 ]
             });
             $("#movies").on("click", ".js-delete", function () {
@@ -59,7 +80,7 @@
                             url: "/api/movies/" + button.attr("data-movie-id"),
                             method: "DELETE",
                             success: function () {
-                                table.row(button.parents("tr")).remove().draw();            
+                                table.row(button.parents("tr")).remove().draw();
                             }
                         });
                     }
