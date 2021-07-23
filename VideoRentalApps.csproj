@@ -340,6 +340,10 @@
     <Compile Include="Migrations\202107081849512_SeedUsers2.designer.cs">
       <DependentUpon>202107081849512_SeedUsers2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107231610375_SomeUnWantedChanges.cs" />
+    <Compile Include="Migrations\202107231610375_SomeUnWantedChanges.designer.cs">
+      <DependentUpon>202107231610375_SomeUnWantedChanges.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -868,6 +872,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107081849512_SeedUsers2.resx">
       <DependentUpon>202107081849512_SeedUsers2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107231610375_SomeUnWantedChanges.resx">
+      <DependentUpon>202107231610375_SomeUnWantedChanges.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
