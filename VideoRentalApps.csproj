@@ -228,6 +228,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdministratorsController.cs" />
     <Compile Include="Controllers\Api\CustomersController.cs" />
     <Compile Include="Controllers\Api\MoviesController.cs" />
     <Compile Include="Controllers\Api\NewRentalsController.cs" />
@@ -361,6 +362,7 @@
     <Compile Include="ViewModels\MovieFormViewModel.cs" />
     <Compile Include="ViewModels\MovieViewModel.cs" />
     <Compile Include="ViewModels\CustomerFormViewModel.cs" />
+    <Compile Include="ViewModels\NewRoleViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Arsha\css\style.css" />
@@ -792,6 +794,7 @@
     <Content Include="Views\Shared\_LayoutTheme.cshtml" />
     <Content Include="Views\Shared\_NavBarTheme.cshtml" />
     <Content Include="Views\Shared\_LoginPartialTheme.cshtml" />
+    <Content Include="Views\Administrators\NewRole.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
